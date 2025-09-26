@@ -1,0 +1,80 @@
+Documento de Melhorias no Plano de Testes – ServeRest 
+
+Autora: Ana Carolina Amorim de Souza
+
+1. Introdução
+
+Este documento descreve as melhorias aplicadas ao plano de testes da API ServeRest, considerando o feedback recebido no Challenge anterior e a adoção de novas práticas de testes de APIs REST utilizando Robot Framework.
+
+O objetivo é tornar o plano mais robusto, confiável e próximo do nível profissional, reforçando cobertura, cenários de borda, priorização e estratégias de automação.
+
+2. Melhorias Aplicadas
+2.1 Cobertura
+
+Inclusão de cenários de borda:
+
+Campos nulos, tipos incorretos.
+
+Valores limites 
+ex.: preço = 0, quantidade negativa, quantidade muito alta
+
+Consistência entre módulos 
+ex.: exclusão de produto presente em carrinho, retorno ao estoque
+
+Reforço em validação de mensagens de erro, garantindo padronização e formato consistente no contrato da API.
+
+2.2 Cenários de Teste
+
+Adicionados pré-condições e pós-condições para clareza no fluxo.
+
+Novos cenários negativos:
+
+Login com formato de e-mail inválido.
+
+Cadastro de produto com campos obrigatórios ausentes ou valores inválidos.
+
+Tentativa de criar carrinho com productId inexistente.
+
+Inclusão de cenários de integração interna:
+
+Exclusão de usuário administrador ativo.
+
+Exclusão de produto associado a carrinho, com validação de impacto no estoque.
+
+2.3 Priorização
+
+Revisão da tabela de priorização para dar maior peso a cenários críticos.
+
+2.4 Automação
+
+Definição de testes candidatos à automação com Robot Framework:
+
+Login (positivo/negativo).
+
+Cadastro de usuário (válido/inválido).
+
+Cadastro e edição de produto.
+
+Adição e remoção de carrinho.
+
+Organização dos testes automatizados com tags:
+
+critical (fluxos essenciais),
+
+smoke (validação rápida),
+
+regression (testes completos em releases).
+
+Estratégia:
+
+Automatizar os cenários críticos.
+
+Executar manualmente cenários complementares.
+
+2.5 Matriz de Risco
+
+Atualizada com probabilidade mais realista para falhas críticas.
+
+3. Conclusão
+
+Com os novos cenários de borda, priorização revisada e foco em automação com Robot Framework, o plano de testes da da API ServeRest está mais alinhado às boas práticas de mercado e apto a reduzir riscos em produção.
